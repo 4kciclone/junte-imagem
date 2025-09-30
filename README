@@ -1,12 +1,13 @@
-Claro! Aqui está uma sugestão de `README.md` bem estruturado e com um visual agradável para o seu projeto no GitHub. Você pode copiar e colar este conteúdo diretamente em um arquivo chamado `README.md`.
+# 🎞️ Juntador de Imagens Vertical (Image Strip Joiner)
+
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+Um software simples e prático com interface gráfica (GUI) para unir imagens verticalmente, criando "fitas" ou "tiras" de imagem. Ideal para organizar webtoons, scans de documentos, ou qualquer sequência de imagens que precise ser visualizada de forma contínua.
+
+<br>
 
 ---
 
-# 🎞️ Juntador de Imagens Vertical (Image Strip Joiner)
-
-Esta versão inclui um **explorador de arquivos integrado para seleção de múltiplas pastas** e **diretórios padrão inteligentes** para uma experiência de usuário superior.
-
-<br>
 ## ✨ Funcionalidades Principais
 
 * **🗂️ Explorador de Pastas Integrado:** Selecione **múltiplas pastas de uma vez** usando `Ctrl+Click` ou `Shift+Click`.
