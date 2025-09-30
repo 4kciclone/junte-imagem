@@ -1,97 +1,114 @@
-Claro! Aqui está uma sugestão de `README.md` bem estruturado e com um visual agradável para o seu projeto no GitHub. Você pode copiar e colar este conteúdo diretamente em um arquivo chamado `README.md`.
+# 🎞️ Juntador de Imagens Vertical v4.1
 
----
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-# 🎞️ Juntador de Imagens Vertical (Image Strip Joiner)
+Uma ferramenta de desktop robusta, construída com Python e Tkinter, para unir imagens verticalmente em "fitas". Ideal para webtoons, scans de documentos e qualquer projeto que exija a visualização de imagens sequenciais de forma contínua e organizada.
 
-![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-
-Um software simples e prático com interface gráfica (GUI) para unir imagens verticalmente, criando "fitas" ou "tiras" de imagem. Ideal para organizar webtoons, scans de documentos, ou qualquer sequência de imagens que precise ser visualizada de forma contínua.
+Esta versão inclui um **explorador de arquivos integrado para seleção de múltiplas pastas** e **diretórios padrão inteligentes** para uma experiência de usuário superior.
 
 <br>
-
----
-
 ## ✨ Funcionalidades Principais
 
-*   **🖼️ Interface Gráfica Simples:** Feito com `Tkinter` para ser intuitivo e fácil de usar.
-*   **📂 Seleção de Múltiplas Pastas:** Processe várias pastas de uma só vez.
-*   **🔢 Ordenação Numérica Inteligente:** As imagens são ordenadas corretamente (ex: `img_1.jpg`, `img_2.jpg`, `img_10.jpg`) antes de serem unidas.
-*   **📏 Validação de Largura:** O script verifica se as imagens sequenciais possuem a mesma largura. Se uma imagem tiver largura diferente, a fita atual é salva e uma nova é iniciada, evitando distorções.
-*   **#️⃣ Limite de Imagens por Fita:** Defina um número máximo de imagens a serem combinadas em uma única fita, perfeito para dividir longas sequências.
-*   **📤 Seleção de Pasta de Saída:** Escolha facilmente onde salvar os arquivos finais.
-*   **✅ Feedback ao Usuário:** Exibe mensagens de sucesso ou erro para guiar o usuário.
+* **🗂️ Explorador de Pastas Integrado:** Selecione **múltiplas pastas de uma vez** usando `Ctrl+Click` ou `Shift+Click`.
+* **💡 Diretórios Padrão Inteligentes:** O programa abre automaticamente na sua pasta de **Downloads** para buscar e salvar arquivos.
+* **🪞 Organização de Saída Espelhada:** Cada pasta de entrada (`Capitulo_01`) gera uma subpasta correspondente no diretório de saída.
+* **🔢 Ordenação Numérica Natural:** Graças ao `natsort`, os arquivos são organizados como um humano faria (`img_1`, `img_2`, `img_10`).
+* **🛡️ Processamento Robusto e Seguro:**
+
+  * Validação de largura automática para evitar distorções.
+  * Prevenção de erros em imagens maiores que o limite do JPEG (65.500px).
+* **📊 Feedback em Tempo Real:** Barra de progresso e status visível durante todo o processo.
+* **🎨 Interface Moderna:** Usando `TTK (Themed Tkinter)` para um visual agradável.
 
 ---
 
-## 🚀 Como Usar
+## 🚀 Começando
 
 ### Pré-requisitos
 
-- **Python 3.7** ou superior.
-- Biblioteca **Pillow**, o fork amigável do PIL.
+* **Python 3.7** ou superior.
+* Pip (gerenciador de pacotes do Python).
 
 ### Instalação
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
-    cd SEU_REPOSITORIO
-    ```
+1. Clone o repositório:
 
-2.  **Instale as dependências:**
-    ```bash
-    pip install Pillow
-    ```
-    Ou, se você criar um arquivo `requirements.txt`:
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+   cd SEU_REPOSITORIO
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   pip install Pillow natsort
+   ```
 
 ### Execução
 
-Para iniciar o programa, execute o script Python no seu terminal:
 ```bash
-python image_joiner.py
+python nome_do_seu_arquivo.py
 ```
 
-### Passo a Passo na Interface
+---
 
-1.  **Adicionar Pastas:** Clique em `Adicionar Pasta` para selecionar as pastas que contêm as imagens. Você pode adicionar quantas quiser.
-2.  **Definir Opções:**
-    *   **Número máximo de imagens por fita:** Insira um número para limitar a quantidade de imagens por arquivo final. Use `0` para um limite ilimitado (a fita só será cortada se a largura da imagem mudar).
-    *   **Selecionar Pasta de Saída:** Clique para escolher o diretório onde as fitas de imagem serão salvas.
-3.  **Juntar Imagens:** Clique no botão `Juntar Imagens` para iniciar o processo.
-4.  **Aguarde a Conclusão:** Uma mensagem de sucesso aparecerá quando o processo for finalizado!
+## 💻 Como Usar
+
+1. **Adicionar Pastas de Entrada:**
+
+   * Clique em `Adicionar Pasta(s)`.
+   * Navegue até seus arquivos.
+   * Selecione uma ou várias pastas e clique em `Selecionar`.
+
+2. **Definir Opções de Geração:**
+
+   * Número máximo de imagens por fita (use `0` para ignorar esse limite).
+   * Escolha a **Pasta de Saída Principal**.
+
+3. **Iniciar Processo:** Clique em `Juntar Imagens!` e acompanhe o progresso.
 
 ---
 
 ## ⚙️ Exemplo de Funcionamento
 
-Imagine que você tem uma pasta com os seguintes arquivos:
+**Estrutura de arquivos de ENTRADA:**
 
-- `pagina_01.png` (800x1200 pixels)
-- `pagina_02.png` (800x1200 pixels)
-- `capa_especial.jpg` (900x1300 pixels)
-- `pagina_03.png` (800x1200 pixels)
+```
+/home/user/Downloads/
+├── Meu Manga/
+│   ├── Capitulo 01/
+│   │   ├── pag_01.jpg
+│   │   ├── pag_02.jpg
+│   │   └── pag_03.jpg
+│   │
+│   └── Capitulo 02/
+│       ├── img-01.png
+│       └── img-02.png
+```
 
-O script irá gerar **três arquivos** na sua pasta de saída:
+**Após selecionar `/home/user/Downloads/Resultados` como pasta de SAÍDA:**
 
-1.  `nome-da-pasta_fita_001.jpg`: Contendo a união vertical de `pagina_01.png` e `pagina_02.png`.
-2.  `nome-da-pasta_fita_002.jpg`: Contendo apenas a `capa_especial.jpg`, pois sua largura é diferente.
-3.  `nome-da-pasta_fita_003.jpg`: Contendo apenas a `pagina_03.png`, que inicia uma nova fita.
+```
+/home/user/Downloads/
+└── Resultados/
+    ├── Capitulo 01/
+    │   └── fita_001.jpg
+    │
+    └── Capitulo 02/
+        └── fita_001.jpg
+```
 
 ---
 
 ## 🤝 Contribuições
 
-Contribuições são sempre bem-vindas! Se você tem alguma ideia para melhorar este projeto, sinta-se à vontade para:
+Contribuições são muito bem-vindas! Para colaborar:
 
-1.  Fazer um **Fork** do projeto.
-2.  Criar uma nova **Branch** (`git checkout -b feature/sua-feature-incrivel`).
-3.  Fazer o **Commit** das suas alterações (`git commit -m 'Adiciona uma feature incrível'`).
-4.  Fazer o **Push** para a Branch (`git push origin feature/sua-feature-incrivel`).
-5.  Abrir um **Pull Request**.
+1. Faça um **Fork** do projeto.
+2. Crie uma nova **Branch** (`git checkout -b feature/SuaFeatureIncrivel`).
+3. Faça o **Commit** das suas alterações (`git commit -m 'Adiciona SuaFeatureIncrivel'`).
+4. Faça o **Push** para a Branch (`git push origin feature/SuaFeatureIncrivel`).
+5. Abra um **Pull Request**.
 
 ---
 
