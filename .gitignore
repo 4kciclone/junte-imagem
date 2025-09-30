@@ -14,3 +14,7 @@ venv/
 
 
 output/
+
+/dist/
+/build/
+*.spec
