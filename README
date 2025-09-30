@@ -1,0 +1,100 @@
+Claro! Aqui está uma sugestão de `README.md` bem estruturado e com um visual agradável para o seu projeto no GitHub. Você pode copiar e colar este conteúdo diretamente em um arquivo chamado `README.md`.
+
+---
+
+# 🎞️ Juntador de Imagens Vertical (Image Strip Joiner)
+
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+Um software simples e prático com interface gráfica (GUI) para unir imagens verticalmente, criando "fitas" ou "tiras" de imagem. Ideal para organizar webtoons, scans de documentos, ou qualquer sequência de imagens que precise ser visualizada de forma contínua.
+
+<br>
+
+---
+
+## ✨ Funcionalidades Principais
+
+*   **🖼️ Interface Gráfica Simples:** Feito com `Tkinter` para ser intuitivo e fácil de usar.
+*   **📂 Seleção de Múltiplas Pastas:** Processe várias pastas de uma só vez.
+*   **🔢 Ordenação Numérica Inteligente:** As imagens são ordenadas corretamente (ex: `img_1.jpg`, `img_2.jpg`, `img_10.jpg`) antes de serem unidas.
+*   **📏 Validação de Largura:** O script verifica se as imagens sequenciais possuem a mesma largura. Se uma imagem tiver largura diferente, a fita atual é salva e uma nova é iniciada, evitando distorções.
+*   **#️⃣ Limite de Imagens por Fita:** Defina um número máximo de imagens a serem combinadas em uma única fita, perfeito para dividir longas sequências.
+*   **📤 Seleção de Pasta de Saída:** Escolha facilmente onde salvar os arquivos finais.
+*   **✅ Feedback ao Usuário:** Exibe mensagens de sucesso ou erro para guiar o usuário.
+
+---
+
+## 🚀 Como Usar
+
+### Pré-requisitos
+
+- **Python 3.7** ou superior.
+- Biblioteca **Pillow**, o fork amigável do PIL.
+
+### Instalação
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+    cd SEU_REPOSITORIO
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    pip install Pillow
+    ```
+    Ou, se você criar um arquivo `requirements.txt`:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Execução
+
+Para iniciar o programa, execute o script Python no seu terminal:
+```bash
+python image_joiner.py
+```
+
+### Passo a Passo na Interface
+
+1.  **Adicionar Pastas:** Clique em `Adicionar Pasta` para selecionar as pastas que contêm as imagens. Você pode adicionar quantas quiser.
+2.  **Definir Opções:**
+    *   **Número máximo de imagens por fita:** Insira um número para limitar a quantidade de imagens por arquivo final. Use `0` para um limite ilimitado (a fita só será cortada se a largura da imagem mudar).
+    *   **Selecionar Pasta de Saída:** Clique para escolher o diretório onde as fitas de imagem serão salvas.
+3.  **Juntar Imagens:** Clique no botão `Juntar Imagens` para iniciar o processo.
+4.  **Aguarde a Conclusão:** Uma mensagem de sucesso aparecerá quando o processo for finalizado!
+
+---
+
+## ⚙️ Exemplo de Funcionamento
+
+Imagine que você tem uma pasta com os seguintes arquivos:
+
+- `pagina_01.png` (800x1200 pixels)
+- `pagina_02.png` (800x1200 pixels)
+- `capa_especial.jpg` (900x1300 pixels)
+- `pagina_03.png` (800x1200 pixels)
+
+O script irá gerar **três arquivos** na sua pasta de saída:
+
+1.  `nome-da-pasta_fita_001.jpg`: Contendo a união vertical de `pagina_01.png` e `pagina_02.png`.
+2.  `nome-da-pasta_fita_002.jpg`: Contendo apenas a `capa_especial.jpg`, pois sua largura é diferente.
+3.  `nome-da-pasta_fita_003.jpg`: Contendo apenas a `pagina_03.png`, que inicia uma nova fita.
+
+---
+
+## 🤝 Contribuições
+
+Contribuições são sempre bem-vindas! Se você tem alguma ideia para melhorar este projeto, sinta-se à vontade para:
+
+1.  Fazer um **Fork** do projeto.
+2.  Criar uma nova **Branch** (`git checkout -b feature/sua-feature-incrivel`).
+3.  Fazer o **Commit** das suas alterações (`git commit -m 'Adiciona uma feature incrível'`).
+4.  Fazer o **Push** para a Branch (`git push origin feature/sua-feature-incrivel`).
+5.  Abrir um **Pull Request**.
+
+---
+
+## 📜 Licença
+
+Este projeto está distribuído sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
